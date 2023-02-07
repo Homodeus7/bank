@@ -1,26 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main-layout></main-layout>
+  <auth-layout></auth-layout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MainLayout from "./layout/MainLayout.vue";
+import AuthLayout from "./layout/AuthLayout.vue";
 export default {
-  name: 'App',
+  setup() {},
   components: {
-    HelloWorld
-  }
-}
+    MainLayout,
+    AuthLayout,
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
