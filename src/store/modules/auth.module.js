@@ -38,7 +38,6 @@ export default {
           },
           { root: true }
         );
-        console.log(error());
         throw new Error();
       }
     },
