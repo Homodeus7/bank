@@ -10,7 +10,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
     color: #2c3e50;
-    background: #2c3e50;
+    background: #212b36;
 }
 
 hr {
@@ -58,14 +58,6 @@ h2 {
 h3 {
     font-size: 1.35rem;
 }
-
-/*.primary {*/
-/*    color: #42b983;*/
-/*}*/
-
-/*.danger {*/
-/*    color: #e53935;*/
-/*}*/
 
 .btn {
     color: #42b983;
@@ -304,10 +296,6 @@ h3 {
     background: rgba(0, 0, 0, .35);
     z-index: 100;
 }
-
-
-
-
 
 .loader {
     font-size: 10px;

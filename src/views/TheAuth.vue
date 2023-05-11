@@ -1,51 +1,23 @@
 <template>
-  <form class="card" @submit.prevent="onSubmit">
+  <form class="card" @submit.prevent="">
     <h1>Sign in</h1>
 
-    <div :class="['form-control', { invalid: eError }]">
+    <div>
       <label for="email">Email</label>
-      <input type="email" id="email" v-model="email" @blur="eBlur" />
-      <small v-if="eError">{{ eError }}</small>
+      <input type="email" />
     </div>
 
-    <div :class="['form-control', { invalid: pError }]">
+    <div>
       <label for="password">Password</label>
-      <input type="password" id="password" v-model="password" @blur="pBlur" />
-      <small v-if="pError">{{ pError }}</small>
+      <input type="password" />
     </div>
 
-    <button
-      class="btn primary"
-      type="submit"
-      :disabled="isSubmitting || isTooManyAttempts"
-    >
-      Enter
-    </button>
-    <div class="text-danger" v-if="isTooManyAttempts">
-      Too many login attempts. Try later.
-    </div>
+    <button class="btn primary" type="submit">Enter</button>
   </form>
 </template>
 
 <script>
-import { useLoginForm } from "../use/login-form";
-import { useRoute } from "vue-router";
-import { useStore } from "vuex";
-import { error } from "../utils/error";
-export default {
-  setup() {
-    const route = useRoute();
-    const store = useStore();
-
-    if (route.query.message) {
-      store.dispatch("setMessage", {
-        value: error(route.query.message),
-        type: "warning",
-      });
-    }
-    return { ...useLoginForm() };
-  },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped></style>

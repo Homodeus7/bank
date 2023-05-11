@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import { computed } from "vue";
-import { useRoute } from "vue-router";
-import MainLayout from "./layout/MainLayout.vue";
-import AuthLayout from "./layout/AuthLayout.vue";
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import MainLayout from './layout/MainLayout.vue';
+import AuthLayout from './layout/AuthLayout.vue';
 export default {
   setup() {
     const route = useRoute();
