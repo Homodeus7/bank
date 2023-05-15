@@ -1,32 +1,32 @@
-import { createRouter, createWebHistory } from "vue-router";
-import store from "../store";
-import Home from "../views/TheHome.vue";
+import { createRouter, createWebHistory } from 'vue-router';
+import store from '../store';
+import Home from '../views/TheHome.vue';
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: Home,
     meta: {
-      layout: "main",
+      layout: 'main',
       auth: true,
     },
   },
   {
-    path: "/help",
-    name: "Help",
-    component: () => import("../views/TheHelp.vue"),
+    path: '/help',
+    name: 'Help',
+    component: () => import('../views/TheHelp.vue'),
     meta: {
-      layout: "main",
+      layout: 'main',
       auth: true,
     },
   },
   {
-    path: "/auth",
-    name: "Auth",
-    component: () => import("../views/TheAuth.vue"),
+    path: '/auth',
+    name: 'Auth',
+    component: () => import('../views/TheAuth.vue'),
     meta: {
-      layout: "auth",
+      layout: 'auth',
     },
   },
 ];
@@ -34,17 +34,17 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  linkActiveClass: "active",
-  linkExactActiveClass: "active",
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'active',
 });
 
 router.beforeEach((to, from, next) => {
   const requireAuth = to.meta.auth;
 
-  if (requireAuth && store.getters["auth/isAuthenticated"]) {
+  if (requireAuth && store.getters['auth/isAuthenticated']) {
     next();
-  } else if (requireAuth && !store.getters["auth/isAuthenticated"]) {
-    next("/auth?message=auth");
+  } else if (requireAuth && !store.getters['auth/isAuthenticated']) {
+    next('/auth?message=auth');
   } else {
     next();
   }
