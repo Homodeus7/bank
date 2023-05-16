@@ -1,5 +1,5 @@
 <template>
-  <h4 v-if="requests.length === 0" class="text-center">No requests yet</h4>
+  <h4 v-if="requests.length === 0" class="text-center">No requests</h4>
   <table v-else class="table">
     <thead>
       <tr>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  props: ["requests"],
+  props: ['requests'],
 };
 </script>
 

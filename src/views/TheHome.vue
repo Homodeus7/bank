@@ -1,5 +1,25 @@
 <template>
-  <div></div>
+  <app-page title="List requests">
+    <template #header>
+      <button class="btn primary" @click="modal = true">Create</button>
+    </template>
+
+    <request-table :requests="[]"></request-table>
+
+    <teleport to="body">
+      <app-modal v-if="modal" title="Create request" @close="modal = false">
+        <request-modal></request-modal>
+      </app-modal>
+    </teleport>
+  </app-page>
 </template>
 
-<script></script>
+<script setup>
+import AppPage from '@/components/ui/AppPage.vue';
+import RequestTable from '@/components/requests/RequestTable.vue';
+import RequestModal from '@/components/requests/RequestModal.vue';
+import { ref } from 'vue';
+import AppModal from '@/components/ui/AppModal.vue';
+
+const modal = ref(false);
+</script>
