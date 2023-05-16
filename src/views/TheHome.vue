@@ -8,7 +8,7 @@
 
     <teleport to="body">
       <app-modal v-if="modal" title="Create request" @close="modal = false">
-        <request-modal></request-modal>
+        <request-modal @created="modal = false"></request-modal>
       </app-modal>
     </teleport>
   </app-page>
@@ -18,8 +18,8 @@
 import AppPage from '@/components/ui/AppPage.vue';
 import RequestTable from '@/components/requests/RequestTable.vue';
 import RequestModal from '@/components/requests/RequestModal.vue';
-import { ref } from 'vue';
 import AppModal from '@/components/ui/AppModal.vue';
+import { ref } from 'vue';
 
 const modal = ref(false);
 </script>
