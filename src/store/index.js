@@ -1,5 +1,6 @@
 import { createStore, createLogger } from 'vuex';
 import auth from '@/store/modules/auth.module';
+import request from '@/store/modules/request.module';
 
 const plugins = [];
 
@@ -30,5 +31,5 @@ export default createStore({
       }, 5000);
     },
   },
-  modules: { auth },
+  modules: { auth, request },
 });
