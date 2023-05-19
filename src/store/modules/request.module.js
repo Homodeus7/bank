@@ -24,8 +24,6 @@ export default {
           payload
         );
         commit('addRequest', { ...payload, id: data.name });
-        console.log(data);
-        console.log(commit);
         dispatch(
           'setMessage',
           {
