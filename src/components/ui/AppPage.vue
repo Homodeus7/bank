@@ -1,4 +1,7 @@
 <template>
+  <div class="breadcrumbs" v-if="back">
+    <router-link to="/" class="text-white">Come back</router-link>
+  </div>
   <div class="card">
     <h1 class="card-title">
       {{ title }}
@@ -15,6 +18,10 @@ const props = defineProps({
   title: {
     type: String,
     required: true,
+  },
+  back: {
+    type: Boolean,
+    default: false,
   },
 });
 
