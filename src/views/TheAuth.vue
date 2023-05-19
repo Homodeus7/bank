@@ -1,7 +1,8 @@
 <template>
   <form class="card" @submit.prevent="onSubmit">
     <h1>Sign in</h1>
-
+    <h2 class="text-danger">Email: 2@mail.com</h2>
+    <h2 class="text-danger">Pass: 123456</h2>
     <div :class="['form-control', { invalid: eError }]">
       <label for="email">Email</label>
       <input type="email" id="email" v-model="email" @blur="eBlur" />
